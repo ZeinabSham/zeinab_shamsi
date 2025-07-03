@@ -1,0 +1,98 @@
+* ASCII text, with CRLF line terminators
+#assignment3
+#cell 0
+    #name: Zeinab Shamsi
+    #email: zeinabshamsi2006@gmail.com
+    #GitHub Link: https://github.com/ZeinabSham/zeinab_shamsi
+
+
+
+#cell 1
+def greet(name):
+    print(f"hello, {name}!")
+greet(input("what's your name? "))
+
+
+
+#cell 2
+def analyze_numbers(num1,num2):
+    print(num1,"and",num2)
+    sum=num1+num2
+    if sum%2==0:
+        print('even')
+    else:
+        print('odd')
+    print('summation=',sum)
+analyze_numbers(int(input('first number? ')),int(input('second number?')))
+
+
+
+#cell 3
+def find_a_b(x,y):
+    sum=x+y
+    dif=x-y
+    x=(dif+sum)//2
+    y=(sum-dif)//2
+    print('sum:',sum,',difference:',dif,',x:',x,',y:',y)
+    if x>y:
+        print(x,',the first number is bigger than the second one which is',y)
+find_a_b(int(input('1st num?')),int(input('2nd num?')))
+
+
+
+#cell 4
+def calculate_discounted_price(price, discount=10, tax=5):
+    print(f"Original price: ${price}")
+    discount_amount = price * (discount / 100)
+    price_after_discount = price - discount_amount
+    print(f"Discount ({discount}%): -${discount_amount}")
+    print(f"Price after discount: ${price_after_discount}")
+    tax_amount = price_after_discount * (tax / 100)
+    final_price = price_after_discount + tax_amount
+    print(f"Tax ({tax}%): +${tax_amount}")
+    print(f"Final price: ${final_price}")
+    return round(final_price, 2)
+calculate_discounted_price(100)
+#line by line explanation:
+#line1:it defines a function named calculate_discounted_price and considers 3 parameters for price, discount and tax
+#line2:then it prints the main price
+#line3:it caculates the discount amount,how? by caculating discountin this way: dividing 10 into 100 to get the percentage and then, multiple with price amount. and puts it intp a variable.
+#line4:calculating price after discount: price - discount amount as the name of their variables. then puts the difference into another variable
+#line5: it prints Discount and discount amount
+#line6: prints price after discount
+#line7: it calculates tax amount: price after discount multiple by tax percentage which is also calculated. then puts it intp a varibale
+#line8: it calculates final price by summing tax amount with price after dicount, then puts it into another variable
+#line9: ends the function
+#line10: calls the function and wants it to perform the function with 100 as the amount of main price
+#end of explanation
+
+
+
+#cell 5
+full_names = ["Alexander Fleming", "Elizabeth Blackwell", "Edward Jenner", "William Osler"]
+first_names1= list(map(lambda x: x.replace('Fleming',''), full_names))
+first_names2= list(map(lambda x: x.replace('Blackwell',''), first_names1))
+first_names3= list(map(lambda x: x.replace('Jenner',''), first_names2))
+first_names= list(map(lambda x: x.replace('Osler',''), first_names3))
+print(first_names)
+
+
+#cell 6 
+users = [
+    {"name": "Ali", "age": 17, "active": True},
+    {"name": "Sara", "age": 22, "active": False},
+    {"name": "Reza", "age": 19, "active": True},
+    {"name": "Lina", "age": 25, "active": True},
+    {"name": "Mona", "age": 16, "active": True},
+    {"name": "Javad", "age": 20, "active": False},
+]
+qualifieds = list(filter(lambda x: x==filter(lambda ["age"]: ["age"]>=18 ) and x==filter(lambda ["active"]: ["active"]== True ) ,users))
+print(qualifieds)
+
+
+#cell 7
+#Here we have a while loop that continues to execute as long as it is True. In this case, we use try-except to prevent possible errors from damaging our code. First, we write some risky code after the try.
+#In this code, we ask the user to give us two decimal numbers so that we can then use them to perform the fraction. But just to be on the safe side, since the user may enter a string and get a value error, we use try-except.
+#If we get a value error, this code warns the user that they must enter a valid numeric value. Another possible error is that the user enters 0 for the denominator and we get a zero division error.
+#For this type of error, we also write an except so that if it occurs, the user is warned that the denominator cannot be zero and must enter another number (in both excepts, the number is taken from the user again).
+#In all other cases, we round the result variable by 3, print the result, and finally say thank you.
